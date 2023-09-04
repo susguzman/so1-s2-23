@@ -5,7 +5,7 @@ A backend using express and Oracle as database.
 
 ```
 # Setting env vars
-export ORACLE_USER=postgres
+export ORACLE_USER=oracle
 export ORACLE_PASS=<your_pass>
 export ORACLE_CONNSTR=localhost:1521/xepdb1
 export SERVER_PORT=3800

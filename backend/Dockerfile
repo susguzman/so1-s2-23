@@ -13,8 +13,17 @@ RUN dnf install oracle-instantclient-basic -y
 RUN dnf module enable nodejs:16 -y
 RUN dnf module install nodejs -y
 
+ENV ORACLE_USER=oracle \
+    ORACLE_PASS='' \
+    ORACLE_CONNSTR=localhost:1521/xepdb1 \
+    SERVER_PORT=3800
+
 COPY . /opt/app
 
 WORKDIR /opt/app
+
+RUN npm install
+
+EXPOSE 3800
 
 CMD ["npm", "start"]
