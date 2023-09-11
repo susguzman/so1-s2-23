@@ -13,19 +13,15 @@ services:
     image: backend:0.1.0
     ports:
       - 3800:3800
-    environment:
-      - ORACLE_USER=APPUSER
-      - ORACLE_PASS=passwordapp
-      - ORACLE_CONNSTR=database:1521/xepdb1
+    env_file:
+      - ./.env
     restart: always
   database:
     image: gvenzl/oracle-xe:21.3.0
     ports:
       - 1521:1521
-    environment:
-      - ORACLE_PASSWORD=passwordso1
-      - APP_USER=APPUSER
-      - APP_USER_PASSWORD=passwordapp
+    env_file:
+      - ./.env
     volumes:
       - ./database:/container-entrypoint-initdb.d
       - oracle-data:/opt/oracle/oradata
