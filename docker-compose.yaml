@@ -3,7 +3,7 @@ services:
     build:
       context: ./frontend
       dockerfile: nginx.dockerfile
-    image: susguzman/so1-s223-front:0.1.0-nginx-alpine
+    image: susguzman/so1-s223-front:0.1.1-nginx-alpine
     ports:
       - 8888:80
   mybackend:
