@@ -3,7 +3,9 @@ services:
     build:
       context: ./frontend
       dockerfile: nginx.dockerfile
-    image: susguzman/so1-s223-front:0.1.1-nginx-alpine
+      args:
+        - REACT_APP_BACKEND_BASE_URL=http://back.poguz.xyz:3800
+    image: susguzman/so1-s223-front:0.1.2-nginx-alpine
     ports:
       - 8888:80
   mybackend:

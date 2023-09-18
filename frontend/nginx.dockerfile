@@ -12,7 +12,7 @@ COPY . /opt/app
 
 WORKDIR /opt/app
 
-ENV REACT_APP_BACKEND_BASE_URL=http://34.41.209.87:3800
+ARG REACT_APP_BACKEND_BASE_URL=http://localhost:3800
 
 RUN npm install
 
