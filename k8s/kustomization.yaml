@@ -1,0 +1,7 @@
+namespace: qa
+
+resources:
+- backend.yaml
+- database.yaml
+- frontend.yaml
+- namespace.yaml
