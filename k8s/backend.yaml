@@ -15,7 +15,6 @@ kind: Deployment
 metadata:
   name: backend
 spec:
-  replicas: 1
   selector:
     matchLabels:
       app: backend
@@ -40,3 +39,16 @@ spec:
             cpu: "200m"
         ports:
         - containerPort: 3800
+---
+apiVersion: autoscaling/v1
+kind: HorizontalPodAutoscaler
+metadata:
+  name: hta-backend
+spec:
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: backend
+  minReplicas: 3
+  maxReplicas: 10
+  targetCPUUtilizationPercentage: 70
