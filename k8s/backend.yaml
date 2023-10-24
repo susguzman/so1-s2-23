@@ -7,7 +7,7 @@ spec:
   selector:
     app: backend
   ports:
-  - port: 3800       # Port Service
+  - port: 80         # Port Service
     targetPort: 3800 # Container Port
 ---
 apiVersion: apps/v1

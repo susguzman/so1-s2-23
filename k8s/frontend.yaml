@@ -7,7 +7,7 @@ spec:
   selector:
     app: frontend
   ports:
-  - port: 8888     # Port Service
+  - port: 80       # Port Service
     targetPort: 80 # Container Port
 ---
 apiVersion: apps/v1
