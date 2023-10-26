@@ -1,6 +1,12 @@
 const Guard = require('../models/guard');
 
 const guard = async (req, res, next) => {
+  if (req.path == "/health") {
+    return res.status(200).json({
+      message: 'Estoy vivo!',
+    });
+  }
+
   if (
     !req.headers.authorization ||
     !req.headers.authorization.startsWith('Bearer ')

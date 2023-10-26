@@ -25,7 +25,7 @@ spec:
     spec:
       containers:
       - name: backend
-        image: susguzman/so1-s223-back:0.1.0
+        image: susguzman/so1-s223-back:0.1.1
         env:
         - name: ORACLE_USER
           value: APPUSER
