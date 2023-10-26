@@ -5,3 +5,4 @@ resources:
 - database.yaml
 - frontend.yaml
 - namespace.yaml
+- ingress.yaml
